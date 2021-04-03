@@ -6,10 +6,10 @@ const requestListener = (req, res) => {
   let templatePath = undefined;
   switch (req.url) {
     case '/':
-      templatePath = './templates/greetings.html';
+      templatePath = '/templates/greetings.html';
       break;
     case '/users':
-      templatePath = './templates/users.html';
+      templatePath = '/templates/users.html';
       break;
     case '/create-user':
       res.statusCode = 302;
@@ -28,11 +28,11 @@ const requestListener = (req, res) => {
       }
       return res.end();
     default:
-      res.write('Could not get: ' + req.url);
+      res.write('URL not available: ' + req.url);
       return res.end();
   }
 
-  fs.readFile(templatePath, 'utf8', (err, data) => {
+  fs.readFile(__dirname + templatePath, 'utf8', (err, data) => {
     if (err) {
       res.write(`ERROR: ${err.message}`);
       return res.end();
