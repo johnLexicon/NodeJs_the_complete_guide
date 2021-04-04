@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/users">Home</a></li>
+            <li><a href="/users/all">Users</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <h1>Home Page</h1>
+        <h5 id="subTitle">Add user</h5>
+        <form>
+            <div class="form-group">
+                <label for="firstname">
+                    First name:
+                </label>
+                <input id="firstname" name="firstname" type="text">
+            </div>
+            <div class="form-group">
+                <label for="lastname">
+                    Last name:
+                </label>
+                <input type="text" id="lastname" name="lastname">
+            </div>
+            <button id="addUser">Add user</button>
+        </form>
+    </main>
+    <script>
+        const btnAddUser = document.getElementById('addUser');
+        const firstName = document.getElementById('firstname');
+        const lastName = document.getElementById('lastname');
+        let users = [];
+
+        btnAddUser.addEventListener('click', (e) => {
+            e.preventDefault();
+            let storageContent = window.localStorage.getItem('users');
+            if (storageContent !== null) {
+                users = JSON.parse(storageContent);
+            }
+            users.push({ firstName: firstName.value, lastName: lastName.value });
+            window.localStorage.setItem('users', JSON.stringify(users));
+            document.querySelector('form').reset();
+            alert('Added user to local storage');
+        })
+    </script>
+</body>
+
+</html>
