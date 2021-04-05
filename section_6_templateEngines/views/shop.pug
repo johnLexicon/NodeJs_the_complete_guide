@@ -6,10 +6,23 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title #{docTitle}
         link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/shop.css")
     body 
         nav 
             ul 
                 li 
-                    a(href="/") Shop 
+                    a(href="/shop") Shop 
                 li 
-                    a(href="/admin/add-product") Admin
+                    a(href="/admin") Admin
+        main.container 
+            h3 Products 
+            if products.length > 0
+                .grid 
+                    each product in products 
+                        article.card 
+                            header.card-header 
+                                h5 #{product.title} 
+                            .card-content 
+                                p #{product.content}
+            else 
+                p No Products Available

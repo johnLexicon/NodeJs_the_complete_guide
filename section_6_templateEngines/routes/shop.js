@@ -1,10 +1,12 @@
 const express = require('express');
-const path = require('path');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('shop', { docTitle: 'My shop' });
+  res.render('shop', {
+    docTitle: 'My shop',
+    products: req.app.get('products'),
+  });
 });
 
 module.exports = router;

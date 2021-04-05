@@ -1,9 +1,16 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 
-router.get('/add-product', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'views', 'add-product.html'));
+router.get('/', (req, res) => {
+  res.render('add-product');
+});
+
+router.post('/add-product', (req, res) => {
+  const product = { title: req.body.title, content: req.body.content };
+  const products = req.app.get('products');
+  products.push(product);
+  req.app.set('products', products);
+  res.redirect('/shop');
 });
 
 module.exports = router;

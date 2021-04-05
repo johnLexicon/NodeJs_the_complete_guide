@@ -38,54 +38,6 @@ nav a {
   color: white;
 }
 
-form {
-  margin-top: 1rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-#firstname,
-#lastname {
-  line-height: 1.5rem;
-  padding: 0 1rem;
-  border-radius: 5px;
-}
-
-button {
-  background-color: rgb(64, 64, 187);
-  color: #fff;
-  padding: 0.6rem;
-  border-radius: 5px;
-  box-shadow: 3px 3px 5px #aaa;
-}
-
-input:focus,
-button:focus {
-  outline: none;
-}
-
-button:active {
-  box-shadow: none;
-}
-
-.hide {
-  display: none;
-}
-
-#userList {
-  margin-top: 1rem;
-  padding: 1rem;
-  list-style-type: none;
-  max-width: 300px;
-  border: 1px solid #bbb;
-}
-
-#userList > li:nth-child(odd) {
-  background-color: #eee;
-}
-
 @media (min-width: 768px) {
   .container {
     width: 80%;
