@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRouter);
 app.use('/shop', shopRouter);
 app.use('/', (req, res) => {
-  res.render('not-found');
+  res.render('not-found', { docTitle: 'Not Found' });
 });
 
 app.listen(9999);

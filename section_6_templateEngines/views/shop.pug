@@ -1,28 +1,18 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{docTitle}
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/shop.css")
-    body 
-        nav 
-            ul 
-                li 
-                    a(href="/shop") Shop 
-                li 
-                    a(href="/admin") Admin
-        main.container 
-            h3 Products 
-            if products.length > 0
-                .grid 
-                    each product in products 
-                        article.card 
-                            header.card-header 
-                                h5 #{product.title} 
-                            .card-content 
-                                p #{product.content}
-            else 
-                p No Products Available
+extends layouts/main-layout.pug
+
+block styles 
+    link(rel="stylesheet", href="/css/shop.css")
+
+block content 
+    main.container 
+        h3 Products 
+        if products.length > 0
+            .grid 
+                each product in products 
+                    article.card 
+                        header.card-header 
+                            h5 #{product.title} 
+                        .card-content 
+                            p #{product.content}
+        else 
+            p No Products Available

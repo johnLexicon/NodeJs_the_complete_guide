@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('add-product');
+  res.render('add-product', { docTitle: 'Admin', activate: 'admin' });
 });
 
 router.post('/add-product', (req, res) => {

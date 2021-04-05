@@ -35,7 +35,11 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: #ddd;
+}
+
+.active {
+  color: #fff;
 }
 
 @media (min-width: 768px) {

@@ -1,25 +1,16 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Admin
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/admin.css")
-    body 
-        nav 
-            ul 
-                li 
-                    a(href="/shop") Shop
-                    a(href="/admin") Admin
-        main.container 
-            h3 Add new product
-            form(action="/admin/add-product", method="POST")
-                .form-group 
-                    label(for="title") Product title: 
-                    input(type="text", id="title", name="title") 
-                .form-group 
-                    label(for="content") Content: 
-                    input(type="text", id="content", name="content")
-                button(id="addProduct") Add Product
+extends layouts/main-layout.pug 
+
+block styles 
+    link(rel="stylesheet", href="/css/admin.css")
+
+block content 
+    main.container 
+        h3 Add new product
+        form(action="/admin/add-product", method="POST")
+            .form-group 
+                label(for="title") Product title: 
+                input(type="text", id="title", name="title") 
+            .form-group 
+                label(for="content") Content: 
+                input(type="text", id="content", name="content")
+            button(id="addProduct") Add Product
