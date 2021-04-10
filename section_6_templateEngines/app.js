@@ -13,7 +13,9 @@ app.set('products', [
 ]);
 
 //Template engine settings
-app.set('view engine', 'pug');
+
+// app.set('view engine', 'pug'); // Using Pug
+app.set('view engine', 'ejs'); // Using EJS
 app.set('views', 'views'); // This is the default path (not really needed unless you use other path for the templates)
 
 app.use(express.urlencoded({ extended: false }));
