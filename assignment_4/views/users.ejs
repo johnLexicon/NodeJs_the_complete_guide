@@ -12,13 +12,18 @@
 <body>
     <main class="container">
         <h3>Users</h3>
-        <ul>
-            <% for(let user of users) { %>
-                <li>
-                    <%=user%>
-                </li>
+        <%if(users.length> 0) { %>
+            <ul>
+                <% for(let user of users) { %>
+                    <li>
+                        <%=user%>
+                    </li>
+                    <%}%>
+            </ul>
+            <%} else {%>
+                <p>No existing users</p>
                 <%}%>
-        </ul>
+                    <a href="/users">Back to add users</a>
     </main>
 </body>
 
